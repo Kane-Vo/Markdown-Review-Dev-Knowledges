@@ -2,21 +2,54 @@
 ## Cấu trúc dữ liệu và giải thuật
   ### 1. Độ phức tạp thuật toán (Big O)
 
-  ### 2. Sắp xếp và tìm kiếm nhị phân
-    a. Sort
-      * Bubble sort
-      * Selection sort
-      * Insertion sort
-      * Quick sort
-      * Heap sort
+  Time/Space Complexity
+  Xác định dựa trên độ phức tạp về thời gian chạy thuật toán và độ phức tạp về không gian (vùng nhớ)
 
-    b. Tìm kiếm nhị phân
+  BigO là định lượng xác định số phép toán phải chạy với so với kích thước đầu vào, việc cân đo dựa trên Big O giúp lựa chọn giải thuật phù hợp và tối ưu hơn.
+
+  Một số chỉ số phức tạp của thuật toán:
+
+  | Big O Notation | Name         | Details                                                                                                                                         |
+  |----------------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
+  | O(1)           | Constant     | Các lệnh đơn (lệnh khai báo, gán, nhập xuất dữ liệu, phép toán số học,...), không phụ thuộc vào dữ liệu đầu vào. vd: a + b,                     |
+  | O(log n)       | Logarithmic  | Số phép tính (thời gian thực hiện) tăng theo kích thước dữ liệu theo hàm logarit. vd: tìm kiếm nhị phân.                                        |
+  | O(n)           | Linear       | Số phép tính phụ thuộc vào dữ liệu đầu vào theo 1 biến. vd: tìm kiếm tuyến tính, loop                                                           |
+  | O(n log n)     | Linearithmic | Tổng hợp của n và logn (lồng nhau). vd: Heap sort, Merge sort.                                                                                  |
+  | O(n^2)         | Quadratic    | Vòng lặp lồng nhau. Ví dụ tìm xem trong tập hợp có phần tử trùng nhau không.                                                                    |
+  | O(n^3)         | Cubic        | Ba vòng lặp lồng nhau. Ví dụ tính bài toán: 3*x + 5*y + 9 * z = 100                                                                             |
+  | O(2^n)         | Exponential  | Thời gian chạy theo cấp số nhân (cơ số 2) có nghĩa là các phép tính được thực hiện bởi một thuật toán sẽ tăng gấp đôi mỗi khi đầu vào tăng lên. |
+  | O(n!)          | Factorial    | Thời gian chạy giai thừa như hoán đổi một chuỗi.                                                                                                |
+
+  ![Valicon.com Biểu đồ hiển thị độ phức tạp](./image1.png)
+
+  ![Topdev Biểu đồ hiển thị độ phức tạp](./big-o.jpg)
+
+  ![Topdev độ phức tạp](./do-phuc-tap-cua-cac-operation.jpg)
+
+
+  Các quy tắc tính toán độ phức tạp thuật toán:
+  * Các lệnh đơn (lệnh khai báo, gán, nhập xuất dữ liệu, phép toán số học,...): Thời gian o(1)
+  * Các khối lệnh: giả sử khối lệnh bao gồm các câu lệnh s1, s2, s3 với thời gian thực hiện lần lượt là O(f1(n)), O(f2(n)), O(f3(n)) thì thời gian thực hiện khối lệnh là O(max(O(f1(n)), O(f2(n)), O(f3(n))))
+  * Thời gian thực hiện câu lệnh rẽ nhánh: O(max(**_thời gian thực hiện từng khối if_**))
+  * Câu lệnh lặp: Giả sử thực hiện phần thân là O(f(n)) và số lần lặp là g(n) thì thời gian thực hiện vòng lặp là: O(f(n)*g(n))
+
+  ### 2. Sắp xếp và tìm kiếm nhị phân
+  #### Sort
+  * Bubble sort
+  * Selection sort
+  * Insertion sort
+  * Quick sort
+  * Heap sort
+
+  #### Tìm kiếm nhị phân
+  * BFS
+  * DFS
 
   ### 3. Các phương pháp sinh
-    * Sinh nhị phân
-    * Sinh hoán vị
-    * Sinh tổ hợp
-    * Sinh chỉnh hợp
+  * Sinh nhị phân
+  * Sinh hoán vị
+  * Sinh tổ hợp
+  * Sinh chỉnh hợp
   ### 4. Đệ quy, quay lui
 
   ### 5. Cấu trúc dữ liệu stack, queue, dequeue
@@ -28,10 +61,10 @@
 ------------
 ## OOP
   ### 1. Các tính chất
-    1. Tính trừu tượng
-    2. Tính đa hình
-    3. Tính đóng gói
-    4. Tính kế thừa
+  1. Tính trừu tượng
+  2. Tính đa hình
+  3. Tính đóng gói
+  4. Tính kế thừa
 ## Vòng lặp
 ------------
 
@@ -44,28 +77,28 @@
 ## 1 số mô hình phát triển ứng dụng
   ### 1. MVC
 
-    * Model
-      Đây là thành phần quản lý toàn bộ các cơ sở dữ liệu (database) của ứng dụng. Đồng thời Model cũng chứa các lớp mô tả business logic và định nghĩa business rules cho dữ liệu (cách mà dữ liệu sẽ được thay đổi và sử dụng).
+  * Model
+    Đây là thành phần quản lý toàn bộ các cơ sở dữ liệu (database) của ứng dụng. Đồng thời Model cũng chứa các lớp mô tả business logic và định nghĩa business rules cho dữ liệu (cách mà dữ liệu sẽ được thay đổi và sử dụng).
 
-    * View
-      View là giao diện hiển thị dành cho người dùng. Bộ phận này đại diện cho các thành phần UI (ví dụ như: XML, HTML,…) mà người dùng sẽ tương tác. View tương tác với Model thông qua Observer pattern.
+  * View
+    View là giao diện hiển thị dành cho người dùng. Bộ phận này đại diện cho các thành phần UI (ví dụ như: XML, HTML,…) mà người dùng sẽ tương tác. View tương tác với Model thông qua Observer pattern.
 
-    * Controller
-      Controller là bộ phận có chức năng ghi nhận và điều hướng các yêu cầu (request) mà người dùng đưa ra tại View. Sau khi tiếp nhận, Controller sẽ xử lý các dữ liệu thông qua Model và cuối cùng trả kết quả, phản hồi tại View.
+  * Controller
+    Controller là bộ phận có chức năng ghi nhận và điều hướng các yêu cầu (request) mà người dùng đưa ra tại View. Sau khi tiếp nhận, Controller sẽ xử lý các dữ liệu thông qua Model và cuối cùng trả kết quả, phản hồi tại View.
 
-    ~Mô hình MVC có rất nhiều ưu điểm, cụ thể như:~
+  **Mô hình MVC có rất nhiều ưu điểm, cụ thể như:**
 
-      - Nhẹ, tiết kiệm băng thông: MVC không tiêu tốn nhiều viewstate nên rất tiết kiệm băng thông. Các thao tác gửi, nhận dữ liệu được diễn ra liên tục. Vì vậy, website/ứng dụng hoạt động ổn định hơn.
-      - Có thể kiểm tra, phát hiện lỗi phần mềm dễ dàng.
-      - Rất tốt trong việc phân tách các phần Model và View.
-      - Mô hình có kết cấu đơn giản. Dù bạn không quá am hiểu về kỹ thuật cũng có thể sử dụng được.
+  - Nhẹ, tiết kiệm băng thông: MVC không tiêu tốn nhiều viewstate nên rất tiết kiệm băng thông. Các thao tác gửi, nhận dữ liệu được diễn ra liên tục. Vì vậy, website/ứng dụng hoạt động ổn định hơn.
+  - Có thể kiểm tra, phát hiện lỗi phần mềm dễ dàng.
+  - Rất tốt trong việc phân tách các phần Model và View.
+  - Mô hình có kết cấu đơn giản. Dù bạn không quá am hiểu về kỹ thuật cũng có thể sử dụng được.
 
-    ~Bên cạnh ưu điểm, MVC cũng tồn tại một số nhược điểm sau:~
+  **Bên cạnh ưu điểm, MVC cũng tồn tại một số nhược điểm sau:**
 
-      - Khó thực hiện unit test do Controller và Android API có sự liên hệ chặt chẽ với nhau.
-      - Controller và View có liên quan với nhau. Do đó, khi thay đổi ở View thì đồng nghĩa bạn sẽ phải thay đổi ở Controller.
-      - Theo thời gian, Controller sẽ trở nên khó kiểm soát vì càng ngày càng có nhiều code được viết thêm vào.
-      - MVC chỉ thích hợp với các dự án lớn. Với các dự án nhỏ, mô hình này khá cồng kềnh và tốn nhiều thời gian trong việc trung chuyển dữ liệu.
+  - Khó thực hiện unit test do Controller và Android API có sự liên hệ chặt chẽ với nhau.
+  - Controller và View có liên quan với nhau. Do đó, khi thay đổi ở View thì đồng nghĩa bạn sẽ phải thay đổi ở Controller.
+  - Theo thời gian, Controller sẽ trở nên khó kiểm soát vì càng ngày càng có nhiều code được viết thêm vào.
+  - MVC chỉ thích hợp với các dự án lớn. Với các dự án nhỏ, mô hình này khá cồng kềnh và tốn nhiều thời gian trong việc trung chuyển dữ liệu.
 
   ### 1. MVP
 
